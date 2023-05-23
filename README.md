@@ -12,4 +12,5 @@ Next Steps:
 2. Create a Settings page (Allow users to change their user information, including profile picture);
 3. Allow user to login and logout (Create a Login page and set it to Index. Create a logout button in a dropdown menu on the Navbar);
 4. Write instructions on how to deploy website locally, in github repo.
-5. More Later...
+5. If possible, host website using Heroku;
+6. More Later...
