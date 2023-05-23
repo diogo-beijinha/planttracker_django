@@ -2,7 +2,7 @@
 {
     position: absolute;
     left: 5%;
-    background-color: red;
+    /* background-color: red; */
     height: 50%;
     width: 90%;
 }
@@ -15,24 +15,29 @@
 
 /* Add Plant Button */
 #add_button {
-    border: 2px solid #27d73f;
-    background-color: #27d73f;
+    border: 3px solid #0db323;
+    background-color: transparent;
     border-radius: 0.9em;
     padding: 0.8em 1.2em 0.8em 1em;
     transition: all ease-in-out 0.2s;
     font-size: 16px;
+    position: relative;
+    left: 5%;
    }
    
    #add_button span {
     display: flex;
     justify-content: center;
     align-items: center;
-    color: #fff;
+    color: #0db323;
     font-weight: 600;
+    font-family: Oswald, sans-serif;
+    font-weight: normal;
    }
    
    #add_button:hover {
-    background-color: #31b106;
+    background-color: #9ddaa5;
+    color: white;
    }
 
 .plantcontainer
@@ -40,9 +45,11 @@
     position: relative;
     left: 5%;
     margin-top: 2%;
-    background-color: yellow;
+    /* background-color: yellow; */
     height: 50%;
     width: 90%;
+    border: 2px solid black;
+    border-radius: 30px;
 }
 
 
