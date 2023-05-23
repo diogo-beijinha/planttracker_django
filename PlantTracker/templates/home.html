@@ -12,9 +12,19 @@
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24"><path fill="none" d="M0 0h24v24H0z"></path><path fill="currentColor" d="M11 11V5h2v6h6v2h-6v6h-2v-6H5v-2z"></path></svg> Create
         </span>
     </button>
+    <div class="input-group rounded" style="width: 20%; position: absolute; right: 10%; top: 13%;">
+      <input id="searchText" type="search" class="form-control rounded" placeholder="Search" aria-label="Search" aria-describedby="search-addon" />
+      <span class="input-group-text border-0" id="search-addon">
+        <button style="border: 0; background-color: transparent;" onclick="searchPlant()">
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-search" viewBox="0 0 16 16">
+            <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z"/>
+          </svg>
+        </button>
+      </span>
+    </div>
     <div id="maincontainer">
         {% for p in plants %}
-        <div class="plantcontainer">
+        <div class="plantcontainer" id="{{p.scientific_name}}">
                 <img src="{{p.image_url}}" style="position: relative; left: 5%; top: 15%; height: 70%; width: auto;" />
                 <span style="position: relative; margin-left: 5%; font-size: 2em;">{{p.scientific_name}}</span>
                 <span style="position: relative; font-size: 1.5em;">({{p.common_name}})</span>
@@ -97,6 +107,53 @@
           modal.style.left = (screenWidth - modalWidth) / 2 + "px";
           modal.style.visibility = "visible";
           modal.style.position = "absolute";
+        }
+
+        function searchPlant()
+        {
+          
+          //1. Make plants have an id or class with the plant name;
+          //DONE
+
+          //2. When searching, the javascript code searches for classes that contain or are equal to the string inputted;
+          var plants = document.getElementsByClassName("plantcontainer");
+          for (var i = 0; i < plants.length; i++) {
+            var plantID = plants[i].id;
+            console.log(plantID);
+            var searchbarText = document.getElementById("searchText").value;
+            console.log(searchbarText);
+            var show = [];
+            if(plantID.toLowerCase().includes(searchbarText.toLowerCase()))
+            {
+              if(show.includes(plantID) == false)
+              {
+                show.push(plantID);
+                console.log("Pushed to Array");
+                console.log(show);
+              }
+              else
+              {
+                console.log("Already in Array");
+              }
+            }
+            else
+            {
+              console.log("No Matches Found!")
+            }
+          }
+
+          //3. Hide plants that aren't in "show" array
+          for (var i = 0; i < plants.length; i++) {
+            var plantID = plants[i].id;
+            if(show.includes(plantID) == false)
+            {
+              plants[i].style.visibility = "hidden";
+            }
+            else
+            {
+              plants[i].style.visibility = "visible";
+            }
+          }
         }
       </script>
     
