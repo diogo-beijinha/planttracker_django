@@ -142,4 +142,15 @@ html {
           transform: rotate(0);
       }
   }
+
+  #profBtn
+  {
+    width: 4%;
+    height: 70%;
+    border: 0;
+    background-color: transparent;
+    position: absolute;
+    right: 1%;
+    color: black;
+  }
   
