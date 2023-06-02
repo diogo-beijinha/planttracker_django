@@ -80,13 +80,13 @@
           </div>
         </div>-->
       
-        <div id="coupons" class="card coupons">
+        {% comment %} <div id="coupons" class="card coupons">
           <label class="title">Search by Scientific Name</label>
           <form class="form">
               <input type="text" placeholder="Scientific Name" class="input_field">
               <button>Search</button>
           </form>
-        </div>
+        </div> {% endcomment %}
       
         <div class="card checkout" style="visibility: hidden;">
           <label class="title">Checkout</label>
@@ -109,13 +109,24 @@
         //var add_btn = document.getElementById("add_button");
         function showAddModal()
         {
-          var modal = document.getElementById("mastercont");
-          var coup = document.getElementById("coupons");
-          var modalWidth = coup.clientWidth;
-          var screenWidth = document.body.clientWidth;
-          modal.style.left = (screenWidth - modalWidth) / 2 + "px";
-          modal.style.visibility = "visible";
-          modal.style.position = "absolute";
+          window.location = "../admin/main/plants/add/";
+          //var modal = document.getElementById("mastercont");
+          //var coup = document.getElementById("coupons");
+          //var modalWidth = coup.clientWidth;
+          //var screenWidth = document.body.clientWidth;
+          //modal.style.left = (screenWidth - modalWidth) / 2 + "px";
+          //modal.style.visibility = "visible";
+          //modal.style.position = "absolute";
+        }
+
+        function editPlant(plant_id)
+        {
+          window.location = "../admin/main/plants/add/";
+        }
+
+        function removePlant(plant_id)
+        {
+          window.location = "../admin/main/plants/add/";
         }
 
         function searchPlant()
