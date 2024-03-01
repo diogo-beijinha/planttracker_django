@@ -23,7 +23,7 @@ def home(request):
     plant_list = Plants.objects.all()
 
     # Get information about owned plants
-    token = "pTMeYYiAhYiCULE3e-59pSH-FMBj_2njt7pccKcTpcY"
+    token = ""
 
     image_list = []
     common_names_list = []
